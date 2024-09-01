@@ -16,6 +16,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.MaterialTheme
@@ -69,7 +70,9 @@ fun MiLazyRow() {
 fun MiLazyVerticalGrid() {
     LazyVerticalGrid(
         columns = GridCells.Fixed(3),
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier
+            .padding(16.dp)
+            .background(MaterialTheme.colorScheme.background)
     ) {
         items(10) { index ->
             Box(
@@ -77,14 +80,20 @@ fun MiLazyVerticalGrid() {
                     .padding(8.dp)
                     .fillMaxWidth()
                     .aspectRatio(1f)
-                    .background(MaterialTheme.colorScheme.primary),
+                    .background(MaterialTheme.colorScheme.primary, shape = RoundedCornerShape(8.dp)),
                 contentAlignment = Alignment.Center
             ) {
-                Text(text = "Elemento $index", color = MaterialTheme.colorScheme.onPrimary)
+                Text(
+                    text = "Elemento $index",
+                    color = MaterialTheme.colorScheme.onPrimary,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp
+                )
             }
         }
     }
 }
+
 
 @Composable
 fun MiConstraintLayout() {
