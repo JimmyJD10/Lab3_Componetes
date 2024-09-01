@@ -14,8 +14,8 @@ fun TarjetaUsuario(nombre: String, correo: String) {
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth(),
-        color = MaterialTheme.colorScheme.surface, // Define el color de fondo
-        shadowElevation = 4.dp // Agrega sombra sin usar 'elevation' de Card
+        color = MaterialTheme.colorScheme.surface,
+        shadowElevation = 4.dp
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(text = nombre, style = MaterialTheme.typography.titleLarge)
