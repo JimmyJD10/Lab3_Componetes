@@ -57,12 +57,12 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.material3) // Asegúrate de que esta versión sea compatible
 
-    implementation ("androidx.compose.material3:material3:1.2.0-alpha03")
-    implementation ("androidx.compose.ui:ui-tooling-preview:1.2.0-alpha03")
-    implementation ("androidx.compose.ui:ui-tooling:1.2.0-alpha03")
-    implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+    // Usar la versión más reciente y compatible de las librerías de Compose
+    implementation("androidx.compose.material3:material3:1.2.0") // Actualiza según la versión estable
+    implementation("androidx.compose.ui:ui-tooling:1.5.1")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.5.1")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -72,3 +72,4 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+
