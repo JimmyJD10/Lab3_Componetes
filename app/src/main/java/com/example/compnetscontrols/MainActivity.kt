@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -51,10 +52,24 @@ class MainActivity : ComponentActivity() {
 fun MiLazyColumn() {
     LazyColumn(modifier = Modifier.padding(16.dp)) {
         items(10) { index ->
-            Text(text = "Elemento $index", modifier = Modifier.padding(8.dp))
+            Box(
+                modifier = Modifier
+                    .padding(8.dp)
+                    .background(MaterialTheme.colorScheme.surface, shape = MaterialTheme.shapes.medium)
+                    .border(1.dp, MaterialTheme.colorScheme.onSurface, shape = MaterialTheme.shapes.medium)
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = "Elemento $index",
+                    color = MaterialTheme.colorScheme.onSurface,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
         }
     }
 }
+
 
 @Composable
 fun MiLazyRow() {
